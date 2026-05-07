@@ -10,34 +10,34 @@ Mobile model performance insights
 City-wise sales analysis
 Interactive slicers and filtering
 Business-focused dashboard design
+
 📌 Problem Statement
-
 Businesses often struggle to:
-
 Monitor overall sales performance
 Identify top-performing products
 Analyze revenue trends
 Compare sales across regions
-Extract actionable insights from large datasets
+
 ✅ Solution
-
 Developed a Power BI dashboard that provides:
-
 Real-time sales overview
 Interactive business insights
 Trend and performance analysis
 User-friendly reporting visuals
+
 📈 Key Insights
 Total Sales: 769.2M
 Top Brand: Apple
 Peak Revenue Month: July
 Top Selling Model: iPhone SE
 Top Performing City: Delhi
+
 🛠️ Tools Used
 Power BI
 DAX
 Data Visualization
 Business Analytics
+
 🎯 Skills Demonstrated
 Dashboard Design
 KPI Development
