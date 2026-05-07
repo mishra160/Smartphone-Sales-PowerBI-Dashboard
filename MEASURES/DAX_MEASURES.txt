@@ -1,0 +1,86 @@
+-------------------------------------------------------------------------------------------------------------------------
+
+Total Sales = SUMX(MOBILE_SALES_DASHBAORD,MOBILE_SALES_DASHBAORD[Units Sold]*MOBILE_SALES_DASHBAORD[Price Per Unit]) 
+
+
+Total Quantity = SUM(MOBILE_SALES_DASHBAORD[Units Sold])
+
+
+Total Transactions = DISTINCTCOUNT(MOBILE_SALES_DASHBAORD[Transaction ID])
+
+
+Rev. Per Transaction = DIVIDE([Total Sales],[Total Transactions])
+
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+ Top Brand = 
+VAR TopBrand =
+    TOPN(
+        1,
+        VALUES(MOBILE_SALES_DASHBAORD[Brand]),
+        [Total Sales],
+        DESC
+    )
+RETURN
+    CONCATENATEX(
+        TopBrand,
+        MOBILE_SALES_DASHBAORD[Brand],
+        ", "
+    )
+
+
+
+
+
+
+Peak Month = 
+VAR TopMonth =
+    TOPN(
+        1,
+        VALUES(MOBILE_SALES_DASHBAORD[Date].[Month]),
+        [Total Sales],
+        DESC
+    )
+RETURN
+    CONCATENATEX(
+        TopMonth,
+        MOBILE_SALES_DASHBAORD[Date].[Month],
+        ", "
+    )
+
+
+
+
+
+
+Top Model = 
+VAR TopModel =
+    TOPN(
+        1,
+        VALUES(MOBILE_SALES_DASHBAORD[Mobile Model]),
+        [Total Sales],
+        DESC
+    )
+RETURN
+    CONCATENATEX(
+        TopModel,
+        MOBILE_SALES_DASHBAORD[Mobile Model],
+        ", "
+    )
+
+
+
+
+
+Top City = 
+FIRSTNONBLANK(
+    TOPN(
+        1,
+        VALUES(MOBILE_SALES_DASHBAORD[City]),
+        [Total Sales],
+        DESC
+    ),
+    1
+)
